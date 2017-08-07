@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../styles/app.less'
+import styles from '../styles/app.css'
 
 function App() {
   return (
