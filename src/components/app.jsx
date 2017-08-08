@@ -1,8 +1,6 @@
 import React from 'react';
 
-import Post from './post.jsx'
-
-import styles from '../styles/app.css'
+import Post from './post.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -17,10 +15,9 @@ export default class App extends React.Component {
     var httpRequest = new XMLHttpRequest();
     httpRequest.onreadystatechange = () => {
       if (httpRequest.readyState === XMLHttpRequest.DONE) {
-        let posts = JSON.parse( httpRequest.responseText )
-        this.setState({ posts: posts.slice(0,5) });
+        this.setState({ posts: JSON.parse( httpRequest.responseText ) });
       } else {
-          // Not ready yet.
+        // Not ready yet.
       }
 
     };
@@ -31,7 +28,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        { this.state.posts.map( (post, i) => {
+        { this.state.posts.slice(0,5).map( (post, i) => {
           return (
             <Post data={ post }  key={ i } />
           );
