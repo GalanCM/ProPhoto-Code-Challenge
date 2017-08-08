@@ -17,6 +17,8 @@ function challenge_page()
 }
 add_action('admin_menu', 'challenge_page');
 
-wp_enqueue_script( 'bundle', plugins_url('', __FILE__ ) . '/build/bundle.js', [], 1.0, true);
 
+if (isset($_GET['page']) && ($_GET['page'] == 'challenge/view.php')) {
+  wp_enqueue_script( 'bundle', plugins_url('', __FILE__ ) . '/build/bundle.js', [], 1.0, true);
+}
 ?>
