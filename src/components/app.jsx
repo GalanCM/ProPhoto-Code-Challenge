@@ -30,10 +30,32 @@ export default class App extends React.Component {
       <div>
         { this.state.posts.slice(0,5).map( (post, i) => {
           return (
-            <Post data={ post }  key={ i } />
+            <Post data={ post } update_posts={ this.update_posts.bind(this) } delete={ this.remove_post.bind(this) } key={ i } />
           );
         } ) }
       </div>
     );
+  }
+
+  update_posts( id, data ) {
+    var new_posts = this.state.posts;
+    for ( let post_key in new_posts ) {
+      if ( new_posts[ post_key ].id === id ) {
+        for ( let field_key in data ) {
+          new_posts[ post_key ][ field_key ] = data[ field_key ];
+        }
+        this.setState({ posts: new_posts });
+      }
+    }
+  }
+
+  remove_post( id ) {
+    var new_posts = this.state.posts;
+    for ( let key in new_posts ) {
+      if ( new_posts[ key ].id === id ) {
+        new_posts.splice( key, 1 );
+        this.setState({ posts: new_posts });
+      }
+    }
   }
 }

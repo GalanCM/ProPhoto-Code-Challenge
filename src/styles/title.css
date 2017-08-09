@@ -1,0 +1,14 @@
+h1 {
+  cursor: pointer;
+
+  &:hover:after {
+    content: 'edit';
+    color: green;
+    font-size: 20px;
+    margin-left: 18px;
+    text-align: center;
+  }
+}
+input {
+  margin: 10px 0;
+}
