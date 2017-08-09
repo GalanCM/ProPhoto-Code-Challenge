@@ -24,7 +24,7 @@ export default class Title extends React.Component {
       );
     }
     else {
-      return <input value={ this.state.temp_title } onChange={ this.edit_title } placeholder="New Title" onKeyDown={ this.handle_key } autoFocus /> ;
+      return <input value={ this.state.temp_title } onChange={ this.edit_title } placeholder="New Title" onKeyDown={ this.handle_key } onBlur={ this.toggle_edit }autoFocus /> ;
     }
   }
 
