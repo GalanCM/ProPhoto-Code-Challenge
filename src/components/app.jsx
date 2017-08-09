@@ -47,6 +47,10 @@ export default class App extends React.Component {
         this.setState({ posts: new_posts });
       }
     }
+
+    for ( let key in this.props.children ) {
+      console.log(key)
+    }
   }
 
   remove_post( id ) {

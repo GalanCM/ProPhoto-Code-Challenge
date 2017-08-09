@@ -1,12 +1,12 @@
 h1 {
   cursor: pointer;
 
-  &:hover:after {
-    content: 'edit';
+  span {
+    margin-left: 10px;
+  }
+
+  &:hover span {
     color: green;
-    font-size: 20px;
-    margin-left: 18px;
-    text-align: center;
   }
 }
 input {

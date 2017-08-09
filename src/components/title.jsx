@@ -17,7 +17,11 @@ export default class Title extends React.Component {
 
   render() {
     if ( !this.state.edit ) {
-      return <h1 onClick={ this.toggle_edit }>{ this.props.title }</h1> ;
+      return (
+        <h1 onClick={ this.toggle_edit }>{ this.props.title }
+          <span className="dashicons dashicons-edit"></span>
+        </h1>
+      );
     }
     else {
       return <input value={ this.state.temp_title } onChange={ this.edit_title } placeholder="New Title" onKeyDown={ this.handle_key } autoFocus /> ;

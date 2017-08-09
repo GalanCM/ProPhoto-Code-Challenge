@@ -1,8 +1,13 @@
 .delete {
   float: right;
-  color: red;
   font-size: 25px;
   cursor: pointer;
+  padding: 0 10px;
+
+  &:hover {
+    color: red;
+    font-weight: bold;
+  }
 }
 .content {
   display: flex;
